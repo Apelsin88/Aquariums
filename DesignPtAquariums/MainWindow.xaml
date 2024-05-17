@@ -1,0 +1,179 @@
+﻿<Window x:Class="DesignPtAquariums.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesignPtAquariums"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="0.3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="OraganismProxysListbox" Grid.Column="0" Grid.Row="2" Grid.RowSpan="4" MouseDoubleClick="OraganismProxysListbox_MouseDoubleClick" />
+        <!--<ListBox x:Name="OraganismsListbox" Grid.Column="0" Grid.Row="2" Grid.RowSpan="4" />-->
+        <ListBox x:Name="Aquarium1Listbox" Grid.Column="3" Grid.Row="2" />
+        <ListBox x:Name="Aquarium2Listbox" Grid.Column="3" Grid.Row="4" />
+        <ListBox x:Name="Aquarium3Listbox" Grid.Column="6" Grid.Row="2" />
+        <ListBox x:Name="Aquarium4Listbox" Grid.Column="6" Grid.Row="4" />
+        <TextBlock x:Name="OrganismsTextblock" Grid.Column="0" Grid.Row="1" Text="Animal species" HorizontalAlignment="Center"/>
+        
+        <Button x:Name="Aquarium1Button" Grid.Column="3" Grid.Row="1" Content="Aquarium 1" Click="Aquarium1Button_Click"/>
+        <TextBlock x:Name="Aquarium2Textblock" Grid.Column="3" Grid.Row="3" Text="Aquarium 2" HorizontalAlignment="Center"/>
+        <Button x:Name="Aquarium2Button" Grid.Column="3" Grid.Row="3" Content="Aquarium 2" Click="Aquarium2Button_Click"/>
+        <TextBlock x:Name="Aquarium3Textblock" Grid.Column="6" Grid.Row="1" Text="Aquarium 3" HorizontalAlignment="Center"/>
+        <Button x:Name="Aquarium3Button" Grid.Column="6" Grid.Row="1" Content="Aquarium 3" Click="Aquarium3Button_Click"/>
+        <TextBlock x:Name="Aquarium4Textblock" Grid.Column="6" Grid.Row="3" Text="Aquarium 4" HorizontalAlignment="Center"/>
+        <Button x:Name="Aquarium4Button" Grid.Column="6" Grid.Row="3" Content="Aquarium 4" Click="Aquarium4Button_Click"/>
+        <TextBlock Grid.Column="2" Grid.Row="1" Text="Parameters" HorizontalAlignment="Center"/>
+        
+        <StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" >
+            <Label Content="Temperatur C" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium1TemperatureMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium1TemperatureMinusButton_Click" />
+                <TextBox x:Name="Aquarium1TemperatureValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium1TemperaturePlusButton" Content="+" Background="Tomato" Click="Aquarium1TemperaturePlusButton_Click"/>
+            </StackPanel>
+            <Label Content="PH" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium1PHMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium1PHMinusButton_Click"/>
+                <TextBox x:Name="Aquarium1PHValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium1PHPlusButton" Content="+" Background="Tomato" Click="Aquarium1PHPlusButton_Click"/>
+            </StackPanel>
+            <Label Content="TDS" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium1TDSMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium1TDSMinusButton_Click" />
+                <TextBox x:Name="Aquarium1TDSValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium1TDSPlusButton" Content="+" Background="Tomato" Click="Aquarium1TDSPlusButton_Click" />
+            </StackPanel>
+            <Label Content="GH" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium1GHMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium1GHMinusButton_Click" />
+                <TextBox x:Name="Aquarium1GHValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium1GHPlusButton" Content="+" Background="Tomato" Click="Aquarium1GHPlusButton_Click" />
+            </StackPanel>
+            <Label Content="KH" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium1KHMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium1KHMinusButton_Click" />
+                <TextBox x:Name="Aquarium1CHValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium1KHPlusButton" Content="+" Background="Tomato" Click="Aquarium1KHPlusButton_Click" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" >
+            <Label Content="Temperatur C" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium2TemperatureMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium2TemperatureMinusButton_Click"/>
+                <TextBox x:Name="Aquarium2TemperatureValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium2TemperaturePlusButton" Content="+" Background="Tomato" Click="Aquarium2TemperaturePlusButton_Click"/>
+            </StackPanel>
+            <Label Content="PH" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium2PHMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium2PHMinusButton_Click"/>
+                <TextBox x:Name="Aquarium2PHValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium2PHPlusButton" Content="+" Background="Tomato" Click="Aquarium2PHPlusButton_Click"/>
+            </StackPanel>
+            <Label Content="TDS" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium2TDSMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium2TDSMinusButton_Click"/>
+                <TextBox x:Name="Aquarium2TDSValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium2TDSPlusButton" Content="+" Background="Tomato" Click="Aquarium2TDSPlusButton_Click"/>
+            </StackPanel>
+            <Label Content="GH" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium2GHMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium2GHMinusButton_Click"/>
+                <TextBox x:Name="Aquarium2GHValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium2GHPlusButton" Content="+" Background="Tomato" Click="Aquarium2GHPlusButton_Click"/>
+            </StackPanel>
+            <Label Content="KH" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium2KHMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium2KHMinusButton_Click"/>
+                <TextBox x:Name="Aquarium2CHValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium2KHPlusButton" Content="+" Background="Tomato" Click="Aquarium2KHPlusButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="5" Grid.Row="2" HorizontalAlignment="Center" >
+            <Label Content="Temperatur C" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium3TemperatureMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium3TemperatureMinusButton_Click"/>
+                <TextBox x:Name="Aquarium3TemperatureValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium3TemperaturePlusButton" Content="+" Background="Tomato" Click="Aquarium3TemperaturePlusButton_Click"/>
+            </StackPanel>
+            <Label Content="PH" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium3PHMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium3PHMinusButton_Click"/>
+                <TextBox x:Name="Aquarium3PHValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium3PHPlusButton" Content="+" Background="Tomato" Click="Aquarium3PHPlusButton_Click"/>
+            </StackPanel>
+            <Label Content="TDS" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium3TDSMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium3TDSMinusButton_Click"/>
+                <TextBox x:Name="Aquarium3TDSValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium3TDSPlusButton" Content="+" Background="Tomato" Click="Aquarium3TDSPlusButton_Click"/>
+            </StackPanel>
+            <Label Content="GH" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium3GHMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium3GHMinusButton_Click"/>
+                <TextBox x:Name="Aquarium3GHValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium3GHPlusButton" Content="+" Background="Tomato" Click="Aquarium3GHPlusButton_Click"/>
+            </StackPanel>
+            <Label Content="KH" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium3KHMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium3KHMinusButton_Click"/>
+                <TextBox x:Name="Aquarium3CHValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium3KHPlusButton" Content="+" Background="Tomato" Click="Aquarium3KHPlusButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="5" Grid.Row="4" HorizontalAlignment="Center" >
+            <Label Content="Temperatur C" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium4TemperatureMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium4TemperatureMinusButton_Click"/>
+                <TextBox x:Name="Aquarium4TemperatureValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium4TemperaturePlusButton" Content="+" Background="Tomato" Click="Aquarium4TemperaturePlusButton_Click"/>
+            </StackPanel>
+            <Label Content="PH" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium4PHMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium4PHMinusButton_Click"/>
+                <TextBox x:Name="Aquarium4PHValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium4PHPlusButton" Content="+" Background="Tomato" Click="Aquarium4PHPlusButton_Click"/>
+            </StackPanel>
+            <Label Content="TDS" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium4TDSMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium4TDSMinusButton_Click"/>
+                <TextBox x:Name="Aquarium4TDSValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium4TDSPlusButton" Content="+" Background="Tomato" Click="Aquarium4TDSPlusButton_Click"/>
+            </StackPanel>
+            <Label Content="GH" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium4GHMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium4GHMinusButton_Click"/>
+                <TextBox x:Name="Aquarium4GHValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium4GHPlusButton" Content="+" Background="Tomato" Click="Aquarium4GHPlusButton_Click"/>
+            </StackPanel>
+            <Label Content="KH" FontSize="8" Height="19"/>
+            <StackPanel Orientation="Horizontal" Height="15">
+                <Button x:Name="Aquarium4KHMinusButton" Content="-" Background="#FF14A9E2" Click="Aquarium4KHMinusButton_Click"/>
+                <TextBox x:Name="Aquarium4CHValueTextbox" Text="" Width="30" Height="16"/>
+                <Button x:Name="Aquarium4KHPlusButton" Content="+" Background="Tomato" Click="Aquarium4KHPlusButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+        <TextBlock Grid.Column="5" Grid.Row="1" Text="Parameters" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="2" Grid.Row="3" Text="Parameters" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="5" Grid.Row="3" Text="Parameters" HorizontalAlignment="Center"/>
+        
+    </Grid>
+</Window>

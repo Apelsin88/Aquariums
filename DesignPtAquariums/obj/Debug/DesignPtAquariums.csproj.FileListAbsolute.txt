@@ -1,0 +1,15 @@
+C:\Users\JA365\source\repos\DesignPtAquariums\DesignPtAquariums\bin\Debug\DesignPtAquariums.exe.config
+C:\Users\JA365\source\repos\DesignPtAquariums\DesignPtAquariums\bin\Debug\DesignPtAquariums.exe
+C:\Users\JA365\source\repos\DesignPtAquariums\DesignPtAquariums\bin\Debug\DesignPtAquariums.pdb
+C:\Users\JA365\source\repos\DesignPtAquariums\DesignPtAquariums\obj\Debug\DesignPtAquariums.csproj.AssemblyReference.cache
+C:\Users\JA365\source\repos\DesignPtAquariums\DesignPtAquariums\obj\Debug\MainWindow.g.cs
+C:\Users\JA365\source\repos\DesignPtAquariums\DesignPtAquariums\obj\Debug\App.g.cs
+C:\Users\JA365\source\repos\DesignPtAquariums\DesignPtAquariums\obj\Debug\DesignPtAquariums_MarkupCompile.cache
+C:\Users\JA365\source\repos\DesignPtAquariums\DesignPtAquariums\obj\Debug\DesignPtAquariums_MarkupCompile.lref
+C:\Users\JA365\source\repos\DesignPtAquariums\DesignPtAquariums\obj\Debug\MainWindow.baml
+C:\Users\JA365\source\repos\DesignPtAquariums\DesignPtAquariums\obj\Debug\DesignPtAquariums.g.resources
+C:\Users\JA365\source\repos\DesignPtAquariums\DesignPtAquariums\obj\Debug\DesignPtAquariums.Properties.Resources.resources
+C:\Users\JA365\source\repos\DesignPtAquariums\DesignPtAquariums\obj\Debug\DesignPtAquariums.csproj.GenerateResource.cache
+C:\Users\JA365\source\repos\DesignPtAquariums\DesignPtAquariums\obj\Debug\DesignPtAquariums.csproj.CoreCompileInputs.cache
+C:\Users\JA365\source\repos\DesignPtAquariums\DesignPtAquariums\obj\Debug\DesignPtAquariums.exe
+C:\Users\JA365\source\repos\DesignPtAquariums\DesignPtAquariums\obj\Debug\DesignPtAquariums.pdb

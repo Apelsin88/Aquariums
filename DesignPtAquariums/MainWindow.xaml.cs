@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace DesignPtAquariums
 {
@@ -25,9 +26,6 @@ namespace DesignPtAquariums
 
         DatabaseConnection Db = new DatabaseConnection();
         List<OrganismProxy> organismProxies = new List<OrganismProxy>();
-        //List<Organism> OrgSpecies = new List<Organism>();
-        //List<Aquarium> Aquariums = new List<Aquarium>();
-
 
         public MainWindow()
         {
@@ -1210,6 +1208,96 @@ namespace DesignPtAquariums
                 box.Items.Add(leftOrganism.Name + " the " + leftOrganism.Species);
             }
             aquarium.NotifyObservers();
+        }
+
+        private void QuickSort(List<OrganismProxy> list, int low, int high, Func<OrganismProxy, float> keySelector)
+        {
+            if (low < high)
+            {
+                int pi = Partition(list, low, high, keySelector);
+                QuickSort(list, low, pi - 1, keySelector);
+                QuickSort(list, pi + 1, high, keySelector);
+            }
+        }
+
+        private int Partition(List<OrganismProxy> list, int low, int high, Func<OrganismProxy, float> keySelector)
+        {
+            float pivot = keySelector(list[high]);
+            int i = (low - 1);
+
+            for (int j = low; j < high; j++)
+            {
+                if (keySelector(list[j]) <= pivot)
+                {
+                    i++;
+                    Swap(list, i, j);
+                }
+            }
+
+            Swap(list, i + 1, high);
+            return i + 1;
+        }
+
+        private void Swap(List<OrganismProxy> list, int i, int j)
+        {
+            OrganismProxy temp = list[i];
+            list[i] = list[j];
+            list[j] = temp;
+        }
+
+        private void TemperatureComboBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
+            QuickSort(organismProxies, 0, organismProxies.Count - 1, o => o.TemperatureMaxC);
+
+            OraganismProxysListbox.Items.Clear();
+            foreach (OrganismProxy a in organismProxies)
+            {
+                OraganismProxysListbox.Items.Add(a.Species);
+            }
+        }
+
+        private void PhComboBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
+            QuickSort(organismProxies, 0, organismProxies.Count - 1, o => o.PhMax);
+
+            OraganismProxysListbox.Items.Clear();
+            foreach (OrganismProxy a in organismProxies)
+            {
+                OraganismProxysListbox.Items.Add(a.Species);
+            }
+        }
+
+        private void TdsComboBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
+            QuickSort(organismProxies, 0, organismProxies.Count - 1, o => o.TotalDissolvedSolidsMaxPpm);
+
+            OraganismProxysListbox.Items.Clear();
+            foreach (OrganismProxy a in organismProxies)
+            {
+                OraganismProxysListbox.Items.Add(a.Species);
+            }
+        }
+
+        private void GhComboBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
+            QuickSort(organismProxies, 0, organismProxies.Count - 1, o => o.GeneralHardnessMax);
+
+            OraganismProxysListbox.Items.Clear();
+            foreach (OrganismProxy a in organismProxies)
+            {
+                OraganismProxysListbox.Items.Add(a.Species);
+            }
+        }
+
+        private void KhComboBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
+            QuickSort(organismProxies, 0, organismProxies.Count - 1, o => o.CarbonateHardnessMax);
+
+            OraganismProxysListbox.Items.Clear();
+            foreach (OrganismProxy a in organismProxies)
+            {
+                OraganismProxysListbox.Items.Add(a.Species);
+            }
         }
     }
     

@@ -29,8 +29,16 @@
         <ListBox x:Name="Aquarium2Listbox" Grid.Column="3" Grid.Row="4" />
         <ListBox x:Name="Aquarium3Listbox" Grid.Column="6" Grid.Row="2" />
         <ListBox x:Name="Aquarium4Listbox" Grid.Column="6" Grid.Row="4" />
-        <TextBlock x:Name="OrganismsTextblock" Grid.Column="0" Grid.Row="1" Text="Animal species" HorizontalAlignment="Center"/>
-        
+        <TextBlock x:Name="OrganismsTextblock" Grid.Column="0" Grid.Row="1" Text="Animals" HorizontalAlignment="Center" FontFamily="Magneto" FontSize="14"/>
+
+        <ComboBox Name="SortComboBox" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Width="75">
+            <ComboBoxItem Name="TemperatureComboBoxItem" Content="Sort by Temperature max" Selected="TemperatureComboBoxItem_Selected"/>
+            <ComboBoxItem Name="PhComboBoxItem" Content="Sort by PH max" Selected="PhComboBoxItem_Selected"/>
+            <ComboBoxItem Name="TdsComboBoxItem" Content="Sort by TDS max" Selected="TdsComboBoxItem_Selected"/>
+            <ComboBoxItem Name="GhComboBoxItem" Content="Sort by GH max" Selected="GhComboBoxItem_Selected"/>
+            <ComboBoxItem Name="KhComboBoxItem" Content="Sort by KH max" Selected="KhComboBoxItem_Selected"/>
+        </ComboBox>
+
         <Button x:Name="Aquarium1Button" Grid.Column="3" Grid.Row="1" Content="Aquarium 1" Click="Aquarium1Button_Click"/>
         <TextBlock x:Name="Aquarium2Textblock" Grid.Column="3" Grid.Row="3" Text="Aquarium 2" HorizontalAlignment="Center"/>
         <Button x:Name="Aquarium2Button" Grid.Column="3" Grid.Row="3" Content="Aquarium 2" Click="Aquarium2Button_Click"/>
